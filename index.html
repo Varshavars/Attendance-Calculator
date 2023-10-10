@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Calculator</title>
+    <style>
+        #d {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(233, 231, 231, 0.5);
+            flex-direction: column;
+            border-radius: 20px;
+            margin: 120px;
+
+        }
+
+        body {
+            background-image: url(https://pics.imcdb.org/10555/gv2.141.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 80vh;
+            width: 170vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #but {
+            width: 150px;
+            border-radius: 20px;
+            color: white;
+            font-family: fantasy;
+            background-color: rgb(16, 16, 16);
+            padding: 8px;
+            border: none;
+            outline: none;
+            margin: 8px;
+
+        }
+
+        #at {
+            justify-content: center;
+            width: auto;
+            font-family: fantasy;
+        }
+
+        label {
+            /* font-style: italic; */
+            color: rgb(5, 5, 5);
+            font-family: Arial, Helvetica, sans-serif;
+            /* font:bold; */
+            font-family: fantasy;
+            font-size: larger;
+
+        }
+
+        /* #d {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        } */
+    </style>
+</head>
+
+<body>
+    <strong>
+        <h1 id="at">Attendance Calculator</h1>
+    </strong>
+    <form id="d">
+
+        <label>Enter total no. of days:</label>
+        <input type="text" name="a" id="a">
+        <label>Enter no. of day you have attended:</label>
+        <input type="text" name="a" id="b">
+        <button type="submit" id="but">Submit</button>
+        <label>Current percentage:</label>
+        <textarea name="p" id="p" cols="20" rows="1"></textarea>
+        <label>No. of days you need to attend more to reach upto 75% :</label>
+        <textarea name="t" id="t" cols="20" rows="1"></textarea>
+
+    </form>
+
+    <script>
+        let a = document.getElementById("a");
+        let b = document.getElementById("b");
+        let btn = document.getElementById("but");
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            let aa = parseInt(a.value);
+            let bb = parseInt(b.value);
+            let c = (75 / 100) * aa;
+            let d = (bb / aa) * 100;
+            let q= document.getElementById("p");
+            q.innerHTML=((bb/aa)*100);
+            let s = document.getElementById("t");
+            s.innerHTML = c-bb;
+            console.log(r);
+        })
+    </script>
+</body>
+
+</html>
